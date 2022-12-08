@@ -248,7 +248,6 @@ export default {
         [36.55749, 116.74633],
         [36.55849, 116.74633]
       ]
-
       this.moveMarker = MAP.addTrack(tractArr)
     },
 
