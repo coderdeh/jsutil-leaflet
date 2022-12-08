@@ -1,0 +1,115 @@
+{
+  "name": "cockpit_template",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build:test": "vue-cli-service build --env test",
+    "lint": "vue-cli-service lint",
+    "release": "node build/release.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@cci/cp-bar": "^1.0.2",
+    "@cci/cp-bar-rate": "^1.0.7",
+    "@cci/cp-charts-base": "^1.0.38",
+    "@cci/cp-control-tab": "^1.0.6",
+    "@cci/cp-gauge-slide": "^1.1.4",
+    "@cci/cp-gauge-vertical": "^1.1.11",
+    "@cci/cp-histogram": "^1.0.2",
+    "@cci/cp-histogram-stack": "^1.0.0",
+    "@cci/cp-line": "^1.0.4",
+    "@cci/cp-line-histogram": "^1.0.9",
+    "@cci/cp-pie": "^1.2.20",
+    "@cci/cp-progress-vertical": "^1.1.6",
+    "@cci/cp-resources-switch": "^1.0.6",
+    "@cci/cp-ring": "^1.1.11",
+    "@cci/cp-ring-jade": "^1.1.5",
+    "@cci/cp-ring-vertical": "^1.1.2",
+    "@cci/cp-shift-cascade": "^1.0.5",
+    "@cci/cp-shift-spherical": "^1.0.8",
+    "@cci/cp-star": "^1.0.5",
+    "@cci/cp-theme": "^1.0.27",
+    "@cci/cp-theme-huaining": "^1.0.1",
+    "@cci/cp-wave-ball": "^1.0.2",
+    "@cci/cp-wave-slide": "^1.0.3",
+    "@cci/cp-word-cloud": "^1.1.4",
+    "@cci/lib-animation": "^1.0.4",
+    "@cci/lib-charts-utils": "^1.1.29",
+    "@shzl/shzl-leaflet": "^1.3.0",
+    "axios": "^0.21.1",
+    "cloud-libs": "^1.0.1",
+    "core-js": "^3.6.5",
+    "echarts": "^5.0.1",
+    "echarts-wordcloud": "^2.0.0",
+    "element-ui": "^2.13.2",
+    "js-base64": "^3.7.2",
+    "js-md5": "^0.7.3",
+    "leaflet": "^1.5.1",
+    "leaflet.heat": "^0.2.0",
+    "leaflet.markercluster": "^1.5.0",
+    "lodash": "^4.17.21",
+    "moment": "2.24.0",
+    "store": "^2.0.12",
+    "svg-sprite-loader": "^5.2.1",
+    "tween": "^0.9.0",
+    "vue": "^2.6.11",
+    "vue-awesome-swiper": "3",
+    "vue-router": "^3.4.6",
+    "vue-seamless-scroll": "^1.1.23",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.11",
+    "@vue/cli-plugin-babel": "^4.5.0",
+    "@vue/cli-plugin-eslint": "^4.5.0",
+    "@vue/cli-service": "^4.5.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-component": "^1.1.1",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "compression-webpack-plugin": "^5.0.1",
+    "conventional-changelog": "^3.1.24",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "execa": "^5.1.1",
+    "inquirer": "^8.2.0",
+    "node-sass": "^6.0.1",
+    "postcss-px2rem": "^0.3.0",
+    "sass-loader": "^10.0.3",
+    "semver": "^7.3.5",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "globals": {
+    "echarts": true,
+    "L": true
+  },
+  "postcss": {
+    "plugins": {
+      "postcss-px2rem": {
+        "remUnit": 16
+      },
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

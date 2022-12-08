@@ -1,0 +1,16 @@
+@mixin ellipsis($line_num) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line_num;
+}
+
+// flex布局对齐方式
+@mixin flex-align($ai, $jc){
+  display: flex;
+  -webkit-display: flex;
+  flex-direction: row;
+  align-items: $ai;
+  justify-content: $jc;
+}
