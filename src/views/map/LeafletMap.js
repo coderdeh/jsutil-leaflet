@@ -62,6 +62,7 @@ class LeafletMap {
 
   // WMS图层
   wmsLayer = null
+  isAddWms = false
 
   // 图层收集器
   featureCollectors = {}
@@ -104,20 +105,23 @@ class LeafletMap {
       opacity: 1
     })
     this.leafletMap.on('click', e => {
+      if (!this.isAddWms) return
       getFeatureInfo(e, this.leafletMap, (data) => {
-
+        console.log('WMS图层数据', data)
       })
     })
   }
 
   // 添加wms
   addWMS () {
+    this.isAddWms = true
     const feature = this.getFeature('wms') || this.addFeature('wms')
     this.wmsLayer.addTo(feature)
   }
 
   // 清除wms
   clearWMS () {
+    this.isAddWms = false
     this.removeaFeature('wms')
   }
 
@@ -247,6 +251,11 @@ class LeafletMap {
       })
     }
     return marker
+  }
+
+  // 删除点位
+  clearMarker (type) {
+    this.removeaFeature(type)
   }
 
   // 显示详情popup
@@ -557,8 +566,8 @@ class LeafletMap {
 
   // 清除轨迹
   clearTrack () {
-    if (trackFeature) {
-      const bool = this.leafletMap.hasLayer(trackFeature)
+    if (this.trackFeature) {
+      const bool = this.leafletMap.hasLayer(this.trackFeature)
       if (bool) {
         this.trackFeature.remove()
       }

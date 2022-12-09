@@ -26,14 +26,39 @@
       <div class="maps">
         <el-button @click="mapOperate('zoom')">设置层级</el-button>
         <el-button @click="mapOperate('center')">设置中心点</el-button>
-        <el-button @click="mapOperate('marker')">添加Marker点位</el-button>
+        <br>
+
+        <el-button @click="mapOperate('marker')">添加Marker</el-button>
+        <el-button @click="mapOperate('clearmarker')">清除Marker</el-button>
+        <br>
+
         <el-button @click="mapOperate('cluster')">点位聚合</el-button>
+        <el-button @click="mapOperate('clearcluster')">点位聚合</el-button>
+        <br>
+
         <el-button @click="mapOperate('line')">绘制线</el-button>
+        <el-button @click="mapOperate('clearline')">清除线</el-button>
+        <br>
+
         <el-button @click="mapOperate('cricle')">绘制圆形</el-button>
+        <el-button @click="mapOperate('clearcricle')">清除圆形</el-button>
+        <br>
+
         <el-button @click="mapOperate('grid')">绘制网格边界</el-button>
+        <el-button @click="mapOperate('cleargrid')">清除网格边界</el-button>
+        <br>
+
         <el-button @click="mapOperate('head')">绘制热力图</el-button>
+        <el-button @click="mapOperate('clearhead')">清除热力图</el-button>
+        <br>
+
         <el-button @click="mapOperate('wms')">绘制WMS图层</el-button>
-        <el-button @click="mapOperate('trajectory')">绘制行动轨迹</el-button>
+        <el-button @click="mapOperate('clearwms')">清除WMS图层</el-button>
+        <br>
+
+        <el-button @click="mapOperate('trajectory')">绘制轨迹</el-button>
+        <el-button @click="mapOperate('cleartrajectory')">清除轨迹</el-button>
+        <br>
       </div>
       <div class="track">
         <el-button @click="startTrack">播放</el-button>
@@ -90,12 +115,24 @@ export default {
           this.addMarker()
           break
 
+        case 'clearmarker':
+          this.clearMarker('event')
+          break
+
         case 'cluster':
           this.addCluster()
           break
 
+        case 'clearcluster':
+          this.clearCluster()
+          break
+
         case 'line':
           this.addOneLine()
+          break
+
+        case 'clearline':
+          this.clearOneLine()
           break
 
         case 'cricle':
@@ -103,22 +140,41 @@ export default {
           MAP.addCricle([36.789954, 116.725273])
           break
 
+        case 'clearcricle':
+          MAP.clearCricle()
+          break
+
         case 'grid':
           this.addGridPoly()
+          break
+
+        case 'cleargrid':
+          MAP.clearAreaPolygon()
           break
 
         case 'head':
           this.addHead()
           break
 
+        case 'clearhead':
+          MAP.clearHeatmap('equipment')
+          break
+
         case 'wms':
           this.addWMS()
+          break
+
+        case 'clearwms':
+          MAP.clearWMS()
           break
 
         case 'trajectory':
           this.addTrajectory()
           break
 
+        case 'cleartrajectory':
+          MAP.clearTrack()
+          break
 
         default:
           break
@@ -146,6 +202,11 @@ export default {
           MAP.addOneMarker(detail, this.eventMarkerClick, true)
         })
       }
+    },
+
+    // 清除Marker
+    clearMarker () {
+      MAP.clearMarker()
     },
 
     // marker的点击事件
@@ -177,6 +238,11 @@ export default {
         })
         MAP.addCluster(markerList, 'equipment')
       }
+    },
+
+    // 清除聚合
+    clearCluster () {
+      MAP.clearCluster('equipment')
     },
 
     // 添加线
