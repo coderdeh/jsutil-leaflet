@@ -35,5 +35,5 @@ export const ClusterConfig = {
 
 // 弹框
 export const LeafletPopup = {
-  EventPopup,
+  'event': EventPopup,
 }

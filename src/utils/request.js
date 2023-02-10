@@ -17,7 +17,7 @@ function decorateService (service) {
 				config.data = qs.stringify(config.data)
 			}
 			// 设置token
-			config.headers["accessToken"] = "32fc0283-80f8-4619-843d-1f8bfc9e6591"
+			config.headers["accessToken"] = "93b75c4f-8de1-4e1c-bab4-648e402ee4ba"
 			return config
 		},
 		(error) => {

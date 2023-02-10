@@ -72,8 +72,13 @@
 </template>
 
 <script>
-import LeafletMap from '@/views/map/LeafletMap'
-const MAP = new LeafletMap()
+import SgupLeafletMap from '../../map/SgupLeafletMap'
+const mcenter = [36.78839127856239, 116.68853759765626]
+// const mtile = 'GaoDe.Normal.Map'
+const mtile = '/sgup/tile?x={x}&y={y}&z={z}&customid=midnight&type=WGS84'
+const wmsservice = '/geoserver/qh_grid/wms'
+const wmslayer = 'qh_grid:qh_grid_1130_84'
+const MAP = new SgupLeafletMap(mcenter, mtile, wmsservice, wmslayer)
 
 import { reqEventList, reqAllEquiment, reqGridPolygon, reqPatrolTrackDetail } from '@/api/index'
 
@@ -137,11 +142,11 @@ export default {
 
         case 'cricle':
           MAP.clearCricle()
-          MAP.addCricle([36.789954, 116.725273])
+          MAP.addCricle([36.789954, 116.725273], 'cricle')
           break
 
         case 'clearcricle':
-          MAP.clearCricle()
+          MAP.clearCricle('cricle')
           break
 
         case 'grid':
@@ -205,8 +210,8 @@ export default {
     },
 
     // 清除Marker
-    clearMarker () {
-      MAP.clearMarker()
+    clearMarker (type) {
+      MAP.clearMarker(type)
     },
 
     // marker的点击事件
@@ -252,7 +257,12 @@ export default {
         [36.789954, 116.725273],
         [36.78509731286164, 116.74750984848552]
       ]
-      MAP.addPolyLine(lines)
+      MAP.addPolyLine(lines, 'line')
+    },
+
+    // 清除线
+    clearOneLine () {
+      MAP.clearPolyLine('line')
     },
 
     // 添加网格边界

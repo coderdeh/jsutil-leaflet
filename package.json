@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
     "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build:dev": "vue-cli-service build --env development",
     "build:test": "vue-cli-service build --env test",
-    "lint": "vue-cli-service lint",
+    "build:prod": "vue-cli-service build --env production",
     "release": "node build/release.js"
   },
   "dependencies": {
@@ -52,6 +51,7 @@
     "leaflet.markercluster": "^1.5.0",
     "lodash": "^4.17.21",
     "moment": "2.24.0",
+    "sgup-jsutil-leaflet": "^1.0.2",
     "store": "^2.0.12",
     "svg-sprite-loader": "^5.2.1",
     "tween": "^0.9.0",

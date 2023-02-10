@@ -3,7 +3,6 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
 const isProd = process.env.VUE_APP_ENV === 'production'
 const CompressionPlugin = require("compression-webpack-plugin")
 module.exports = {
-  // publicPath: process.env.VUE_APP_BASE_PATH || "/",
   publicPath: "./",
   chainWebpack (config) {
     const resolve = (dir) => path.join(__dirname, dir)
