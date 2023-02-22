@@ -1,0 +1,5 @@
+.DS_Store
+node_modules
+/dist
+# 忽略git提交文件
+node_modules
